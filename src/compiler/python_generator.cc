@@ -467,7 +467,8 @@ bool PrivateGenerator::PrintStub(
           IndentScope raii_first_attribute_indent(out);
           if (render_async) {
             if (method->ClientStreaming()) {
-              // there is no proper generic typing for Stream*MultiCallable available yet
+              // there is no proper generic typing for Stream*MultiCallable
+              // available yet
               out->Print(method_dict, "grpc.aio.$MultiCallableReturnType$,\n");
             } else {
               out->Print(method_dict, "grpc.aio.$MultiCallableReturnType$[\n");
